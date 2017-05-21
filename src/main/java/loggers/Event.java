@@ -4,9 +4,6 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Random;
 
-/**
- * Created by Yaroslava_Kalashnyk on 5/11/2017.
- */
 public class Event {
     private final Random rnd = new Random();
 
@@ -25,12 +22,15 @@ public class Event {
         this.msg = msg;
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
     @Override
     public String toString() {
-        return "Event{" +
+        return "Event: " +
                 "id=" + id +
                 ", msg='" + msg + '\'' +
-                ", date=" + date +
-                '}';
+                ", date=" + date;
     }
 }

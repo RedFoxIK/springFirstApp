@@ -1,30 +1,35 @@
 package loggers;
 
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileEventLogger implements EventLogger {
     private String fileName;
-    private File file;
+    private FileWriter file;
 
-    public void init() {
-        this.file = new File(fileName);
+    public FileEventLogger(String fileName) {
+        this.fileName = fileName;
     }
 
+    public void init() throws IOException {
+        this.file = new FileWriter(fileName, true);
+    }
 
+    @Override
     public void logEvent(Event event) {
-        
         try {
-            FileUtils.writeStringToFile(file, "dfdfg", true);
+            file.write(event.toString() + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void logEvent(String mess) {
-        System.out.println(mess);
+    public void destroy() {
+        try {
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

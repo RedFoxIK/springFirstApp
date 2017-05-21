@@ -10,9 +10,8 @@
         <module name="comepamspringcore" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="com.epam.spring.core" target="1.5" />
-      <module name="comepamspringcore" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="com.epam.spring.core" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

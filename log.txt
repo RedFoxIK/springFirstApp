@@ -1,0 +1,6 @@
+Event: id=22, msg='Guten morgen', date=Sun May 21 17:00:42 MSK 2017
+Event: id=808, msg='Guten tag', date=Sun May 21 17:00:42 MSK 2017
+Event: id=180, msg='Guten abbend', date=Sun May 21 17:00:42 MSK 2017
+Event: id=725, msg='Guten morgen', date=Sun May 21 17:00:56 MSK 2017
+Event: id=925, msg='Guten tag', date=Sun May 21 17:00:56 MSK 2017
+Event: id=407, msg='Guten abbend', date=Sun May 21 17:00:56 MSK 2017

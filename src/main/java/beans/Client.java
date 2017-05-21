@@ -6,10 +6,15 @@ package beans;
 public class Client {
     String id;
     String fullName;
+    String gr;
 
     public Client(String id, String fullName) {
         this.id = id;
         this.fullName = fullName;
+    }
+
+    public void setGreeting(String gr) {
+        this.gr = gr;
     }
 
     public String getId() {
