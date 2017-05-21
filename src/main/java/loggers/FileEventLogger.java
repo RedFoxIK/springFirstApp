@@ -23,4 +23,8 @@ public class FileEventLogger implements EventLogger {
             e.printStackTrace();
         }
     }
+
+    public void logEvent(String mess) {
+        System.out.println(mess);
+    }
 }

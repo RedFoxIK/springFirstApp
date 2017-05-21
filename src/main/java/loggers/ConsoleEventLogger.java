@@ -2,11 +2,14 @@ package loggers;
 
 import loggers.EventLogger;
 
-/**
- * Created by Yaroslava_Kalashnyk on 5/8/2017.
- */
+import java.io.IOException;
+
 public class ConsoleEventLogger implements EventLogger {
     public void logEvent(Event event) {
         System.out.println(event);
+    }
+
+    public void logEvent(String mess) {
+        System.out.println(mess);
     }
 }
