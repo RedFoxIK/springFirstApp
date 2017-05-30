@@ -13,4 +13,8 @@ public class B{
     public void init() {
         System.out.println("B created");
     }
+
+    public void destroy() {
+        System.out.println("B destroyed");
+    }
 }

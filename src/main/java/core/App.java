@@ -39,6 +39,9 @@ public class App {
         app.logEvent(EventType.ERROR, event);
         app.logEvent(EventType.ERROR, event2);
         app.logEvent(EventType.ERROR, event3);
+
+        ctx.getBean(B.class);
+        ctx.getBean("C");
         ctx.close();
     }
 

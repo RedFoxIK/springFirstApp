@@ -38,12 +38,14 @@
 
     <bean id="B"
           init-method="init"
-          class="core.B"/>
+          destroy-method="destroy"
+          class="core.B"
+          lazy-init="true"/>
           <!--p:a-ref="A"/>-->
     <bean id="A" class="core.A" init-method="init"
           c:c-ref="C"/>
     <bean id="C" class="core.C" init-method="init"
           depends-on="D"
-          c:num="1"/>
+          c:num="1" autowire-candidate="false"/>
     <bean id="D" class="core.D" init-method="init"/>
 </beans>
