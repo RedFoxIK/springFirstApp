@@ -15,14 +15,14 @@
     </bean>
 
     <bean id="app" class="core.App">
-        <constructor-arg index="0" ref="client"/>
-        <constructor-arg index="1" ref="fileLogger"/>
-        <constructor-arg index="2">
+        <constructor-arg index="0" ref="fileLogger"/>
+        <constructor-arg index="1">
             <map>
                 <entry key="INFO" value-ref="consoleLogger"/>
                 <entry key="ERROR" value-ref="combinedLogger"/>
             </map>
         </constructor-arg>
+        <property name="client" ref="client"/>
     </bean>
 
     <bean id="event" class="loggers.Event" scope="prototype">

@@ -1,9 +1,11 @@
 package core;
 
 import beans.Client;
+import com.sun.istack.internal.NotNull;
 import loggers.Event;
 import loggers.EventLogger;
 import loggers.EventType;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,10 +16,14 @@ public class App {
     private EventLogger defaultLogger;
     private Map<EventType, EventLogger> loggers;
 
-    public App(Client client, EventLogger defaultLogger, Map<EventType, EventLogger> loggers) {
-        this.client = client;
+    public App(EventLogger defaultLogger, Map<EventType, EventLogger> loggers) {
         this.defaultLogger = defaultLogger;
         this.loggers = loggers;
+    }
+
+    @Required
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public static void main(String[] args) {
