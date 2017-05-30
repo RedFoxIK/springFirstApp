@@ -2,9 +2,7 @@ package core;
 
 import beans.Client;
 import com.sun.istack.internal.NotNull;
-import loggers.Event;
-import loggers.EventLogger;
-import loggers.EventType;
+import loggers.*;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -29,6 +27,7 @@ public class App {
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("others.xml");
 
+        FileEventLogger fel = new CacheFileEventLogger("test", 12);
         App app  = ctx.getBean(App.class);
         Event event = ctx.getBean(Event.class);
         Event event2 = ctx.getBean(Event.class);
