@@ -6,4 +6,8 @@ public class A {
     public A(C c) {
         this.c = c;
     }
+
+    public void init() {
+        System.out.println("A created");
+    }
 }

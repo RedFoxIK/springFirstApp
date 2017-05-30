@@ -35,12 +35,15 @@
             <bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
         </constructor-arg>
     </bean>
-    <bean id="C" class="core.C"
-          c:num="1"/>
-    <bean id="A" class="core.A"
-          c:c-ref="C"/>
-    <bean id="B"
-          class="core.B"
-          p:a-ref="A"/>
 
+    <bean id="B"
+          init-method="init"
+          class="core.B"/>
+          <!--p:a-ref="A"/>-->
+    <bean id="A" class="core.A" init-method="init"
+          c:c-ref="C"/>
+    <bean id="C" class="core.C" init-method="init"
+          depends-on="D"
+          c:num="1"/>
+    <bean id="D" class="core.D" init-method="init"/>
 </beans>
